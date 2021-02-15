@@ -25,11 +25,16 @@
 		}
 	</style>
 	<script type="text/babel">
-		//add default value for className to prevent undefined if not supplied
-		function Box({ className = '', style = {}, ...rest } = {}) {
+		// by breaking out the Box function and hiding implementation details of
+		// CSS classes, the users of Box do not need to know the actual class names
+		// so if the CSS changes, or a CSS library is used, the Box uses do not need
+		// to concern themselves with it. We are HIDING THE IMPLEMENTATION DETAILS
+		function Box({ className = '', style = {}, size = '', ...rest } = {}) {
+			const sizeClassName = size ? `box--${size}` : ''
+
 			return (
 				<div
-					className={`box ${className}`}
+					className={`box ${className} ${sizeClassName}`}
 					style={{ fontStyle: 'italic', ...style }}
 					{...rest}
 				/>
@@ -38,22 +43,13 @@
 
 		const element = (
 			<div>
-				<Box
-					className="box--small"
-					style={{ backgroundColor: 'lightblue' }}
-				>
+				<Box size="small" style={{ backgroundColor: 'lightblue' }}>
 					small lightblue box
 				</Box>
-				<Box
-					className="box--medium"
-					style={{ backgroundColor: 'pink' }}
-				>
+				<Box size="medium" style={{ backgroundColor: 'pink' }}>
 					medium pink box
 				</Box>
-				<Box
-					className="box--large"
-					style={{ backgroundColor: 'orange' }}
-				>
+				<Box size="large" style={{ backgroundColor: 'orange' }}>
 					large orange box
 				</Box>
 			</div>
