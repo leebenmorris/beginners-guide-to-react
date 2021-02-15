@@ -1,0 +1,23 @@
+{
+	"name": "beginners-guide-to-react",
+	"version": "1.0.0",
+	"description": "From this course: https://egghead.io/lessons/react-a-beginners-guide-to-react-introduction",
+	"main": "mockServiceWorker.js",
+	"scripts": {
+		"start": "browser-sync start --server --ignore --files *.html --no-open --no-notify --directory"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/leebenmorris/beginners-guide-to-react.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/leebenmorris/beginners-guide-to-react/issues"
+	},
+	"homepage": "https://github.com/leebenmorris/beginners-guide-to-react#readme",
+	"devDependencies": {
+		"browser-sync": "^2.26.14"
+	}
+}
