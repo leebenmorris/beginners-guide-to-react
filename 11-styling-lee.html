@@ -25,14 +25,15 @@
 		}
 	</style>
 	<script type="text/babel">
+		// this does not provide all the classes as they get overwritten by the props spread
 		function Box(props) {
-			return <div {...props} />
+			return <div className="box" {...props} />
 		}
 
 		const element = (
 			<div>
 				<Box
-					className="box box--small"
+					className="box--small"
 					style={{
 						fontStyle: 'italic',
 						backgroundColor: 'lightblue',
@@ -41,7 +42,7 @@
 					small lightblue box
 				</Box>
 				<Box
-					className="box box--medium"
+					className="box--medium"
 					style={{
 						fontStyle: 'italic',
 						backgroundColor: 'pink',
@@ -50,7 +51,7 @@
 					medium pink box
 				</Box>
 				<Box
-					className="box box--large"
+					className="box--large"
 					style={{
 						fontStyle: 'italic',
 						backgroundColor: 'orange',
