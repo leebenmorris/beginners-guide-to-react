@@ -25,9 +25,13 @@
 		}
 	</style>
 	<script type="text/babel">
+		function Box(props) {
+			return <div {...props} />
+		}
+
 		const element = (
 			<div>
-				<div
+				<Box
 					className="box box--small"
 					style={{
 						fontStyle: 'italic',
@@ -35,8 +39,8 @@
 					}}
 				>
 					small lightblue box
-				</div>
-				<div
+				</Box>
+				<Box
 					className="box box--medium"
 					style={{
 						fontStyle: 'italic',
@@ -44,8 +48,8 @@
 					}}
 				>
 					medium pink box
-				</div>
-				<div
+				</Box>
+				<Box
 					className="box box--large"
 					style={{
 						fontStyle: 'italic',
@@ -53,7 +57,7 @@
 					}}
 				>
 					large orange box
-				</div>
+				</Box>
 			</div>
 		)
 
